@@ -7,6 +7,7 @@ import org.apache.zookeeper.Watcher.Event.EventType;
 import org.apache.zookeeper.Watcher.Event.KeeperState;
 import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.ZooKeeper;
+import org.lili.common.PropsUtil;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -14,7 +15,7 @@ public class Test {
 
 
 	/** zookeeper地址 */
-	static final String CONNECT_ADDR = "192.168.31.121:2181,192.168.31.122:2181:2181,192.168.31.123:2181";
+	static final String CONNECT_ADDR = PropsUtil.getString("zk-config");
 	/** session超时时间 */
 	static final int SESSION_OUTTIME = 2000;//ms 
 	/** 信号量，阻塞程序执行，用于等待zookeeper连接成功，发送成功信号 */

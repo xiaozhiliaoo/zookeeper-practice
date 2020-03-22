@@ -3,13 +3,14 @@ package watcher;
 import org.I0Itec.zkclient.IZkChildListener;
 import org.I0Itec.zkclient.ZkClient;
 import org.I0Itec.zkclient.ZkConnection;
+import org.lili.common.PropsUtil;
 
 import java.util.List;
 
 public class ZkClientWatcher1 {
 
 	/** zookeeper地址 */
-	static final String CONNECT_ADDR = "192.168.31.121:2181,192.168.31.122:2181:2181,192.168.31.123:2181";
+	static final String CONNECT_ADDR = PropsUtil.getString("zk-config");
 	/** session超时时间 */
 	static final int SESSION_OUTTIME = 5000;//ms 
 

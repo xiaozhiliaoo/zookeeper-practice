@@ -1,6 +1,7 @@
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
+import org.lili.common.PropsUtil;
 
 import java.io.IOException;
 import java.util.concurrent.CountDownLatch;
@@ -10,7 +11,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class ZookeeperDemo {
 
-    private static final String CONNECTION_STRING = "192.168.31.131:2181";
+    private static final String CONNECTION_STRING = PropsUtil.getString("zk-config");
     private static final int SESSION_TIMEOUT = 5000;
     private static CountDownLatch latch = new CountDownLatch(1);
 

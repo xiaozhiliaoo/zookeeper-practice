@@ -1,5 +1,6 @@
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
+import org.lili.common.PropsUtil;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -63,7 +64,7 @@ public class BaseZookeeper implements Watcher {
     public static void main(String[] args) throws Exception{
         BaseZookeeper baseZookeeper = new BaseZookeeper();
 
-        String host = "192.168.31.131:2181";
+        String host = PropsUtil.getString("zk-config");
 
         // 连接zookeeper
         baseZookeeper.connectZookeeper(host);

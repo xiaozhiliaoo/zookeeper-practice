@@ -8,6 +8,7 @@ import org.apache.zookeeper.Watcher.Event.KeeperState;
 import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.Stat;
+import org.lili.common.PropsUtil;
 
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -26,7 +27,7 @@ public class ZooKeeperWatcher implements Watcher {
 	/** 定义session失效时间 */
 	private static final int SESSION_TIMEOUT = 10000;
 	/** zookeeper服务器地址 */
-	private static final String CONNECTION_ADDR = "192.168.31.121:2181,192.168.31.122:2181:2181,192.168.31.123:2181";
+	private static final String CONNECTION_ADDR = PropsUtil.getString("zk-config");
 	/** zk父路径设置 */
 	private static final String PARENT_PATH = "/testWatch";
 	/** zk子路径设置 */

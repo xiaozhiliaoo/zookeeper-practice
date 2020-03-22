@@ -9,6 +9,7 @@ import org.apache.curator.framework.recipes.cache.PathChildrenCacheEvent;
 import org.apache.curator.framework.recipes.cache.PathChildrenCacheListener;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.zookeeper.CreateMode;
+import org.lili.common.PropsUtil;
 
 public class CuratorWatcher {
 
@@ -16,7 +17,7 @@ public class CuratorWatcher {
 	static final String PARENT_PATH = "/super";
 	
 	/** zookeeper服务器地址 */
-	public static final String CONNECT_ADDR = "192.168.31.121:2181,192.168.31.122:2181:2181,192.168.31.123:2181";
+	public static final String CONNECT_ADDR = PropsUtil.getString("zk-config");
 
 	/** 定义session失效时间 */
 	public static final int SESSION_TIMEOUT = 30000;

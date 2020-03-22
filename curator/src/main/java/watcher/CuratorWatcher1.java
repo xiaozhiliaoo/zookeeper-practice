@@ -6,11 +6,12 @@ import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.recipes.cache.NodeCache;
 import org.apache.curator.framework.recipes.cache.NodeCacheListener;
 import org.apache.curator.retry.ExponentialBackoffRetry;
+import org.lili.common.PropsUtil;
 
 public class CuratorWatcher1 {
 	
 	/** zookeeper地址 */
-	static final String CONNECT_ADDR = "192.168.31.121:2181,192.168.31.122:2181:2181,192.168.31.123:2181";
+	static final String CONNECT_ADDR = PropsUtil.getString("zk-config");
 	/** session超时时间 */
 	static final int SESSION_OUTTIME = 5000;//ms 
 	

@@ -9,6 +9,7 @@ import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.ACL;
 import org.apache.zookeeper.data.Stat;
+import org.lili.common.PropsUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ZookeeperAuth implements Watcher {
 
 	/** 连接地址 */
-	final static String CONNECT_ADDR = "192.168.31.121:2181";
+	final static String CONNECT_ADDR = PropsUtil.getString("zk-config");
 	/** 测试路径 */
 	final static String PATH = "/testAuth";
 	final static String PATH_DEL = "/testAuth/delNode";

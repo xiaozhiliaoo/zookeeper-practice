@@ -2,6 +2,7 @@ package watcher;
 
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
+import org.lili.common.PropsUtil;
 
 import java.io.IOException;
 import java.util.List;
@@ -16,7 +17,7 @@ public class MyZookeeperWatch implements Watcher {
 
     AtomicInteger seq = new AtomicInteger();
     private static final int SESSION_TIMEOUT = 10000;
-    private static final String CONNECTION_ADDR = "192.168.31.121:2181,192.168.31.122:2181:2181,192.168.31.123:2181";
+    private static final String CONNECTION_ADDR = PropsUtil.getString("zk-config");
     private static final String PARENT_PATH = "/testWatch";
     private static final String CHILDREN_PATH = "/testWatch/children";
     private static final String LOG_PREFIX_OF_MAIN = "【Main】";

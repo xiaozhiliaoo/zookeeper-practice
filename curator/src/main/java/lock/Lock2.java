@@ -5,6 +5,7 @@ import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.recipes.locks.InterProcessMutex;
 import org.apache.curator.retry.ExponentialBackoffRetry;
+import org.lili.common.PropsUtil;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -12,7 +13,7 @@ import java.util.concurrent.CountDownLatch;
 public class Lock2 {
 
 	/** zookeeper地址 */
-	static final String CONNECT_ADDR = "192.168.31.121:2181,192.168.31.122:2181:2181,192.168.31.123:2181";
+	static final String CONNECT_ADDR = PropsUtil.getString("zk-config");
 	/** session超时时间 */
 	static final int SESSION_OUTTIME = 5000;//ms 
 	
